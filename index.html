@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget Tracker</title>
-    <head>
+    
+    <!-- Meta Tags for Social Media -->
+    <meta property="og:title" content="Personal Budget Tracker" />
+    <meta property="og:description" content="Manage your personal finances with ease." />
+    <meta property="og:image" content="Media/Tlogo.png" /> <!-- Thumbnail for social media -->
+    <meta property="og:url" content="https://yourwebsite.com" /> <!-- Replace with your URL -->
+
     <style>
         body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    position: relative;
-    flex-direction: column;
-    overflow: hidden; /* Prevent scrolling */
-    background-color: #D2B48C; /* Light brown color */
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+            flex-direction: column;
+            overflow: hidden; /* Prevent scrolling */
+            background-color: #D2B48C; /* Light brown color */
+        }
         /* Splitter line */
         .splitter {
             width: 100%;
@@ -26,84 +32,82 @@
         }
         /* Social media icons */
         .social-icons {
-    display: flex;
-    justify-content: center; /* Center the icons */
-    flex-wrap: wrap; /* Allow icons to wrap onto multiple lines */
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
-}
+            display: flex;
+            justify-content: center; /* Center the icons */
+            flex-wrap: wrap; /* Allow icons to wrap onto multiple lines */
+            max-width: 100%; /* Ensure it doesn't exceed the container width */
+        }
         .icon {
-    width: 50px; /* Icon width */
-    height: 50px; /* Icon height */
-    margin: 0 10px; /* Spacing between icons */
-    background-color:#f0f0f0; /* Placeholder background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Add this line */
-}
+            width: 50px; /* Icon width */
+            height: 50px; /* Icon height */
+            margin: 0 10px; /* Spacing between icons */
+            background-color: #f0f0f0; /* Placeholder background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer; /* Add this line */
+        }
         .icon img {
             width: 80%; /* Adjust image size */
             height: auto; /* Keep aspect ratio */
         }
-#languageSelect {
-    font-size: 16px;
-    padding: 5px;
-}
-#moreApps {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-weight: bold;
-    color: red;
-    cursor: pointer; /* Hand cursor on hover */
-}
-#donateLabel {
-    position: absolute;
-    top: 60px;  /* Adjust the value as needed */
-    right: 10px;
-    font-weight: bold;
-    color: red;
-    cursor: pointer; /* Hand cursor on hover */
-}
-#dropdown {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    background-color: #ccc; /* Set the dropdown list to grey */
-    border: 1px solid black;
-    z-index: 10;
-}
-
-#dropdown div {
-    padding: 5px;
-    cursor: pointer;
-    background-color: #ccc; /* Default option background color */
-}
-
-#dropdown div:hover {
-    background-color: #bbb; /* Slightly darker grey on hover */
-}
- </style>
+        #languageSelect {
+            font-size: 16px;
+            padding: 5px;
+        }
+        #moreApps {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer; /* Hand cursor on hover */
+        }
+        #donateLabel {
+            position: absolute;
+            top: 60px; /* Adjust the value as needed */
+            right: 10px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer; /* Hand cursor on hover */
+        }
+        #dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            background-color: #ccc; /* Set the dropdown list to grey */
+            border: 1px solid black;
+            z-index: 10;
+        }
+        #dropdown div {
+            padding: 5px;
+            cursor: pointer;
+            background-color: #ccc; /* Default option background color */
+        }
+        #dropdown div:hover {
+            background-color: #bbb; /* Slightly darker grey on hover */
+        }
+    </style>
 </head>
 <body>
-<div id="moreApps">More Free Apps</div>
-<div id="dropdown">
-    <div>Loading1</div>
-    <div>Loading2</div>
-    <div>Loading3</div>
-</div>
-<div id="donateLabel" style="font-size: 16px; color: red;">ساهم في التطوير</div>
+    <div id="moreApps">More Free Apps</div>
+    <div id="dropdown">
+        <div>Loading1</div>
+        <div>Loading2</div>
+        <div>Loading3</div>
+    </div>
+    <div id="donateLabel" style="font-size: 16px; color: red;">ساهم في التطوير</div>
     <div style="position: absolute; top: 10px; left: 10px;">
-    <img src="Media/Tlogo.png" alt="Language" style="height: 40px;">
+        <img src="Media/Tlogo.png" alt="Language" style="height: 40px;">
         <br>
-    <img src="Media/Language.png" alt="Language" style="height: 40px;">
-    <select id="languageSelect" style="margin-left: 10px;">
-        <option value="ar">العربية</option>
-        <option value="en">English</option>
-    </select>
-</div>
+        <img src="Media/Language.png" alt="Language" style="height: 40px;">
+        <select id="languageSelect" style="margin-left: 10px;">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+        </select>
+    </div>
     <!-- Splitter line -->
     <div class="splitter"></div>
     <!-- Social media icons -->
@@ -113,74 +117,72 @@
         <div class="icon" onclick="window.open('https://www.youtube.com/@fekrabusinesssolutions', '_blank');"><img src="Media/youtube.png" alt="YouTube"></div>
         <div class="icon" onclick="window.open('https://www.tiktok.com/@fekra_remote_va', '_blank');"><img src="Media/Tiktok.png" alt="TikTok"></div>
         <div class="icon" onclick="window.open('https://www.instagram.com/fekrasolutions/', '_blank');"><img src="Media/instagram.png" alt="Instagram"></div>
-        <div class="icon" onclick="window.open('https://x.com/Fekrasolutions', '_blank');"><img src="Media/twitter.png" alt=Twitter"></div>
+        <div class="icon" onclick="window.open('https://x.com/Fekrasolutions', '_blank');"><img src="Media/twitter.png" alt="Twitter"></div>
     </div>
     <!-- Logo -->
-<div style="text-align: center; margin-top: 20px;">
-    <img src="Media/Tlogo.png" alt="Logo" style="max-width: 35%; height: auto;">
-</div>
-<!-- Donation Message Container -->
-<div id="donationMessage" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; border: 1px solid black; padding: 20px; z-index: 1000; text-align: center;">
-    <div id="donationText" style="color: black;"></div>
-    <button id="closeButton" style="margin-top: 10px;">Close</button>
-</div>
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="Media/Tlogo.png" alt="Logo" style="max-width: 35%; height: auto;">
+    </div>
+    <!-- Donation Message Container -->
+    <div id="donationMessage" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; border: 1px solid black; padding: 20px; z-index: 1000; text-align: center;">
+        <div id="donationText" style="color: black;"></div>
+        <button id="closeButton" style="margin-top: 10px;">Close</button>
+    </div>
     <script>
-function updateAppLanguage() {
-    var selectedLanguage = document.getElementById("languageSelect").value;
-    var moreAppsLabel = document.getElementById("moreApps"); // Add this line
-    var donateLabel = document.getElementById("donateLabel"); // Add this line
-    
-    if (selectedLanguage === "ar") {
-        moreAppsLabel.innerHTML = "تطبيقات مجانية أخرى"; // Arabic for "More Free Apps"
-        donateLabel.innerHTML = "ساهم في التطوير"; // Arabic for "Donate"
-    } else if (selectedLanguage === "en") {
-        moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
-        donateLabel.innerHTML = "Donate"; // English for "Donate"
-    }
-}
+        function updateAppLanguage() {
+            var selectedLanguage = document.getElementById("languageSelect").value;
+            var moreAppsLabel = document.getElementById("moreApps"); // Add this line
+            var donateLabel = document.getElementById("donateLabel"); // Add this line
+            
+            if (selectedLanguage === "ar") {
+                moreAppsLabel.innerHTML = "تطبيقات مجانية أخرى"; // Arabic for "More Free Apps"
+                donateLabel.innerHTML = "ساهم في التطوير"; // Arabic for "Donate"
+            } else if (selectedLanguage === "en") {
+                moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
+                donateLabel.innerHTML = "Donate"; // English for "Donate"
+            }
+        }
 
-    // Add event listener to language select dropdown
-    document.getElementById("languageSelect").addEventListener("change", updateAppLanguage);
+        // Add event listener to language select dropdown
+        document.getElementById("languageSelect").addEventListener("change", updateAppLanguage);
 
-    // Call updateLabel on page load to set the initial label value
-    updateAppLanguage();
+        // Call updateLabel on page load to set the initial label value
+        updateAppLanguage();
 
-document.getElementById("moreApps").addEventListener("click", function() {
-    var dropdown = document.getElementById("dropdown");
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-});
-document.getElementById("donateLabel").onclick = function() {
-    var selectedLanguage = document.getElementById("languageSelect").value;
-    var donationText;
+        document.getElementById("moreApps").addEventListener("click", function() {
+            var dropdown = document.getElementById("dropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        });
+        document.getElementById("donateLabel").onclick = function() {
+            var selectedLanguage = document.getElementById("languageSelect").value;
+            var donationText;
 
-    if (selectedLanguage === "ar") {
-        donationText = `
-            أعجبك التطبيق؟ نحن نخصص أي مبالغ تدفعها في تطوير النسخة القادمة! شكرا لكم. 
-            <strong>يمكنك إرسال فودافون كاش على رقم 01060469453</strong> 
-            يمكنك المساهمة من كل بلدان العالم من خلال شراء أي من منتجاتنا في 
-            <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">آب ورك</a>, 
-            أفضل منصة رقمية في العالم.
-        `;
-    } else {
-        donationText = `
-            Liked the app? We will allocate any money you pay to develop the next version! Thank you. 
-            <strong>Send Vodafone Cash to 01060469453</strong>. 
-            You can contribute from all countries of the world by purchasing any of our products on 
-            <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">Upwork</a>, 
-            the best digital platform in the world.
-        `;
-    }
+            if (selectedLanguage === "ar") {
+                donationText = `
+                    أعجبك التطبيق؟ نحن نخصص أي مبالغ تدفعها في تطوير النسخة القادمة! شكرا لكم. 
+                    <strong>يمكنك إرسال فودافون كاش على رقم 01060469453</strong> 
+                    يمكنك المساهمة من كل بلدان العالم من خلال شراء أي من منتجاتنا في 
+                    <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">آب ورك</a>, 
+                    أفضل منصة رقمية في العالم.
+                `;
+            } else {
+                donationText = `
+                    Liked the app? We will allocate any money you pay to develop the next version! Thank you. 
+                    <strong>Send Vodafone Cash to 01060469453</strong>. 
+                    You can contribute from all countries of the world by purchasing any of our products on 
+                    <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">Upwork</a>, 
+                    the best digital platform in the world.
+                `;
+            }
 
-    document.getElementById("donationText").innerHTML = donationText;
-    document.getElementById("donationMessage").style.display = "block"; // Show the donation message
-};
+            document.getElementById("donationText").innerHTML = donationText;
+            document.getElementById("donationMessage").style.display = "block"; // Show the donation message
+        };
 
-// Close button functionality
-document.getElementById("closeButton").onclick = function() {
-    document.getElementById("donationMessage").style.display = "none"; // Hide the donation message
-};
-
+        // Close button functionality
+        document.getElementById("closeButton").onclick = function() {
+            document.getElementById("donationMessage").style.display = "none"; // Hide the donation message
+        };
     </script>
 </body>
 </html>
-
